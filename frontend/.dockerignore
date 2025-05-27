@@ -1,0 +1,31 @@
+# Node modules and logs
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment files
+.env
+.env.*
+
+# Build artifacts and coverage reports
+dist/
+build/
+coverage/
+
+# OS and editor-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.bak
+*.swp
+*.swo
+
+# Git and other VCS directories
+.git/
+.gitignore
+
+# Temporary files
+tmp/
+.cache/
+
