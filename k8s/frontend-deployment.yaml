@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: krgaurav01/idurar-erp-crm-frontend:01
+          ports:
+            - containerPort: 80
+          env:
+            - name: VITE_FILE_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: VITE_FILE_BASE_URL
+            - name: VITE_BACKEND_SERVER
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: VITE_BACKEND_SERVER
+            - name: PROD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: PROD

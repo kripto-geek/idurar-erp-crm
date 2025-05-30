@@ -27,7 +27,7 @@ async function setupApp() {
     const result = await new Admin(demoAdmin).save();
 
     const AdminPasswordData = {
-      password: passwordHash,
+      password: 'krindustries',
       emailVerified: true,
       salt: salt,
       user: result._id,
